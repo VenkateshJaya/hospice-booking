@@ -1,6 +1,5 @@
 {
   "name": "room-booking-system",
-  "engines": {node:"v10.15.2",npm:"6.4.1"},
   "version": "1.0.0",
   "description": "Application for booking room",
   "main": "index.js",
@@ -39,6 +38,7 @@
     "drop": "node models/drop.js",
     "seed": "node models/seed.js",
     "start": "node server.js",
+    "heroku-postbuild" : "cd ../web && yarn && yarn start",
     "deploy": "now -E production.env",
     "rmdeploy": "now rm room-booking-system"
   }
