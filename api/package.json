@@ -5,6 +5,11 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "babel": "^6.23.0",
+    "babel-register": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015":"^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",
@@ -20,6 +25,7 @@
     "passport-local-mongoose": "^4.4.0"
   },
   "devDependencies": {
+    "babel-register": "^6.22.0",
     "dotenv": "^7.0.0",
     "eslint": "^4.15.0",
     "eslint-config-prettier": "^2.9.0",
@@ -37,8 +43,8 @@
     "dev": "nodemon server.js",
     "drop": "node models/drop.js",
     "seed": "node models/seed.js",
-    "start": "node server.js",
-    "heroku-postbuild" : "cd ../web && yarn && yarn start",
+    "start": "nodemon -r babel-register server.js",
+    "heroku-postbuild": "cd ../web && yarn && yarn start",
     "deploy": "now -E production.env",
     "rmdeploy": "now rm room-booking-system"
   }

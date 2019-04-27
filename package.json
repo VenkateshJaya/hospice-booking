@@ -1,0 +1,11 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "dependencies": {
+    "concurrently": "^4.1.0"
+  },
+  "scripts": {
+    "install": "(cd web && yarn) && (cd ../api && yarn)",
+    "start": "concurrently \"cd web && PORT=3000 yarn start\" \"cd ../api && PORT=7000 yarn start\""
+  }
+}
